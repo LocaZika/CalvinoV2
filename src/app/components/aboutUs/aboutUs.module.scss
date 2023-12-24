@@ -1,0 +1,26 @@
+@use '@styles/_extends';
+.about-area{
+  .about-img{
+    img{
+      border-radius: 0;
+      width: 100%;
+    }
+  }
+  .about-caption{
+    a{
+      @extend %browser-btn;
+    }
+    p{
+      margin-bottom: 1.5rem;
+      &::first-letter{
+        @extend %text-upper;
+      }
+    }
+    @media (max-width: 575px){
+      padding-top: 3.5rem;
+    }
+    @media only screen and (min-width: 576px) and (max-width: 991px){
+      padding-top: 5rem;
+    }
+  }
+}

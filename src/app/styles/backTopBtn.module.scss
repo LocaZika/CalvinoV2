@@ -1,0 +1,49 @@
+@use '@styles/_extends';
+.backtop-btn{
+  @extend %d-block;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #FF4495;
+  border-radius: 50%;
+  cursor: pointer;
+  &.hidden{
+    @extend %d-none;
+  }
+  &__arrow{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    svg{
+      width: 3rem;
+      height: 3rem;
+      path {
+        fill: var(--white);
+      }
+    }
+    &.arrow-one{
+      animation: arrowMovement 2s linear infinite;
+    }
+    &.arrow-two{
+      animation: arrowMovement 2s 1s linear infinite;
+    }
+    @keyframes arrowMovement {
+      0%{
+        top: 80%;
+        opacity: 0;
+      }
+      50%{
+        top: 50%;
+        opacity: 1;
+      }
+      100%{
+        top: 20%;
+        opacity: 0;
+      }
+    }
+  }
+}

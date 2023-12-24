@@ -1,0 +1,107 @@
+@use '@styles/_extends';
+.footer-wrapper{
+  background: #fff url('../../../public/imgs/footer-bg.jpg') no-repeat center center/cover;
+  &__footer-area{
+    padding: 10rem 0 0;
+    &__caption {
+      &__pera{
+        p{
+          color: #5E5E5E;
+          font-size: 1.6rem;
+          margin-bottom: 2.1rem;
+          line-height: 1.8;
+          &::first-letter{
+            @extend %text-cap;
+          }
+        }
+      }
+      &__socials{
+        ul{
+          padding: 0;
+          li{
+            margin-bottom: 15px;
+            @extend %d-inline;
+            a{
+              font-weight: 300;
+              font-size: 16px;
+              text-decoration: underline transparent;
+              text-align: center;
+              padding: .7rem;
+              svg{
+                color: #BCBCBC;
+              }
+            }
+          }
+        }
+      }
+      h4 {
+        @extend %text-cap;
+        color: #1A1A1A;
+        font-size: 2rem;
+        margin-bottom: 4rem;
+        font-weight: 600;
+      }
+      ul{
+        padding: 0;
+        li{
+          margin-bottom: 1.5rem;
+          a{
+            color: #5E5E5E;
+            font-weight: 300;
+            font-size: 16px;
+            text-decoration: underline transparent;
+            @extend %text-cap;
+            &:hover {
+              @extend %text-under;
+            }
+          }
+          &.footer-wrapper__footer-area__caption--contact{
+            >a:nth-child(n){
+              font-size: 22px;
+              color: #FF4495;
+              @extend %text-under;
+              margin-bottom: 0px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      &.contact{
+        ul{
+          li:nth-last-child(2) > a{
+            @extend %d-block;
+            font-size: 1.4rem;
+            color: #1A1A1A;
+            margin-bottom: .5rem;
+            @extend %text-under;
+            text-transform: lowercase;
+            &::first-letter{
+              text-transform: uppercase;
+            }
+          }
+          li:nth-last-child(1) > a{
+            font-size: 2.2rem;
+            color: #FF4495;
+            margin-bottom: 0;
+            font-weight: 600;
+            @extend %text-under;
+          }
+        }
+      }
+    }
+  }
+  &__footer-bottom{
+    background-color: var(--white);
+    &__footer-border{
+      margin-top: 6rem;
+      padding-bottom: .1rem;
+      padding-top: 1.3rem;
+      p{
+        color: #5E5E5E;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 2;
+      }
+    }
+  }
+}

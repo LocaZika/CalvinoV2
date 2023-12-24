@@ -1,0 +1,66 @@
+@use '@styles/_extends';
+.choose-us-area{
+  h2{
+    text-transform: none;
+    &::first-letter{
+      @extend %text-cap;
+    }
+  }
+  .redirect-btn{
+    @extend %browser-btn;
+    float: right;
+  }
+  .single{
+    @extend %pos-rel;
+    &::before{
+      @extend %pos-abs;
+      content: " ";
+      width: .1rem;
+      height: 100%;
+      background: #E8EEF3;
+      bottom: 0;
+      right: 10%;
+      top: 1%;
+    }
+    &.emp{
+      &::before{
+        background-color: transparent;
+      }
+    }
+    &-counter{
+      margin-bottom: 0.5rem;
+      >span{
+        color: #FF4495;
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+    }
+    .pera-counter{
+      p{
+        color: #545454;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 3.3rem;
+        padding-right: 5rem;
+        &::first-letter{
+          @extend %text-upper;
+        }
+      }
+    }
+  }
+  .right-cap{
+    @extend %pos-rel;
+    p{
+      font-size: 2rem;
+      color: #545454;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 3rem;
+      &::first-letter{
+        @extend %text-upper;
+      }
+    }
+  }
+}

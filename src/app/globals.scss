@@ -1,0 +1,133 @@
+@use '@styles/_extends';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+html,
+body {
+  font-size: 62.5%;
+  height: 100%;
+  background-color: #fff;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none !important;
+  transition: all 0.3s ease-out 0s;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #192839;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 500;
+}
+p {
+  color: #545454;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+:root {
+  --primary-color: #ff4495;
+  --white: #fff;
+  --black: #000;
+}
+// margin
+.mb-20{
+  margin-bottom: 2rem;
+}
+.mb-25{
+  margin-bottom: 2.5rem;
+}
+.mb-30 {
+  margin-bottom: 3rem;
+}
+.mb-35 {
+  margin-bottom: 3.5rem;
+}
+.mb-40{
+  margin-bottom: 4rem !important;
+}
+.mb-50 {
+  margin-bottom: 5rem;
+}
+.mb-60 {
+  margin-bottom: 6rem;
+}
+.mt-40{
+  margin-top: 4rem;
+}
+// padding
+.pt-10{
+  padding-top: 1rem
+}
+.pt-70{
+  padding-top: 7rem;
+}
+.pt-100{
+  padding-top: 10rem;
+}
+.pb-25{
+  padding-bottom: 2.5rem;
+}
+
+.section-padding {
+  padding: 12rem 0;
+}
+// background
+.p-bg{
+  background-color: #F8FBFE;
+}
+.section-title {
+  @extend %pos-rel;
+  h2{
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+    @extend %pos-rel;
+    @extend %text-cap;
+    @media (max-width: 575px){
+      font-size: 2.4rem;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px){
+      font-size: 3rem;
+    }
+    @media only screen and (min-width: 1200px) and (max-width: 1400px){
+      font-size: 4rem;
+    }
+  }
+  span{
+    color: #FF4495;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.8rem;
+  }
+  p{
+    color: #656565;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}

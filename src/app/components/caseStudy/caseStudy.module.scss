@@ -1,0 +1,47 @@
+@use '@styles/_extends';
+.case-study-area{
+  .case-carousel{
+    user-select: none;
+    .case-item-container{
+      margin: 0 1.2rem;
+      .case-item{
+        @extend %pos-rel;
+        .guest-conent{
+          -webkit-transition: all .4s ease-out 0s;
+          -moz-transition: all .4s ease-out 0s;
+          -ms-transition: all .4s ease-out 0s;
+          -o-transition: all .4s ease-out 0s;
+          transition: all .4s ease-out 0s;
+          @extend %pos-abs;
+          left: 3rem;
+          bottom: 2.5rem;
+          z-index: 1;
+          p{
+            color: var(--white);
+            font-weight: 300;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            &::first-letter {
+              @extend %text-upper;
+            }
+          }
+          h3{
+            -webkit-transition: all .4s ease-out 0s;
+            -moz-transition: all .4s ease-out 0s;
+            -ms-transition: all .4s ease-out 0s;
+            -o-transition: all .4s ease-out 0s;
+            transition: all .4s ease-out 0s;
+            color: var(--white);
+            @extend %d-inline;
+            font-size: 2.2rem;
+            font-weight: 700;
+            @extend %text-cap;
+          }
+        }
+      }
+    }
+    .case-slider{
+      width: 100%;
+    }
+  }
+}

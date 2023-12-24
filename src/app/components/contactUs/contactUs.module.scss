@@ -1,0 +1,102 @@
+@use "@styles/_extends";
+.contact-us{
+  margin-top: 12rem;
+  padding: 3rem 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../../../public/imgs/contact-bg.jpg');
+  .single-contact{
+    padding: 6.5rem 5rem 6.5rem 6rem;
+    background-image: url('../../../../public/imgs/shapes/bg-2.png');
+    background-repeat: no-repeat;
+    text-align: center;
+    width: 49rem;
+    height: 50.5rem;
+    @media (max-width: 575px){
+      padding: 1.5rem;
+      width: 30rem;
+      height: 40.5rem;
+      background-size: cover;
+      background-image: none;
+      background: #ff4495;
+      background: -moz-linear-gradient(top, #ff4495 0%, #ff6d6d 100%, #7db9e8 100%);
+      background: -webkit-linear-gradient(top, #ff4495 0%, #ff6d6d 100%, #7db9e8 100%);
+      background: linear-gradient(to bottom, #ff4495 0%, #ff6d6d 100%, #7db9e8 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4495', endColorstr='#7db9e8', GradientType=0);
+    }
+    @extend %d-flex;
+    align-items: center;
+    .caption{
+      h5{
+        font-size: 3.6rem;
+        font-weight: 700;
+        color: var(--white);
+        @extend %text-cap;
+        margin-bottom: 3rem;
+        @extend %d-block;
+        -webkit-transition: all .2s ease-out 0s;
+        -moz-transition: all .2s ease-out 0s;
+        -ms-transition: all .2s ease-out 0s;
+        -o-transition: all .2s ease-out 0s;
+        transition: all .2s ease-out 0s;
+        @media (max-width: 575px){
+          font-size: 2.6rem;
+        }
+        @media only screen and (min-width: 120rem) and (max-width: 140rem){
+          font-size: 3.3rem;
+        }
+      }
+      p{
+        color: var(--white);
+        margin-bottom: 3.5rem;
+        &::first-letter{
+          @extend %text-upper;
+        }
+      }
+      .contact-btn{
+        border: .1rem solid var(--white);
+        color: var(--white);
+        background: none;
+        padding: 1.5rem 3.4rem !important;
+        -moz-user-select: none;
+        cursor: pointer;
+        @extend %d-inline;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: .1rem;
+        position: relative;
+        transition: color 0.4s linear;
+        position: relative;
+        overflow: hidden;
+        border-radius: 3rem;
+        z-index: 1;
+        @extend %text-cap;
+        &::before {
+          content: "";
+          border: .1rem solid transparent;
+          @extend %pos-abs;
+          left: 0;
+          top: 0;
+          width: 101%;
+          height: 101%;
+          background: #fff;
+          z-index: -1;
+          transition: transform 0.5s;
+          transition-timing-function: ease;
+          transform-origin: 0 0;
+          transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+          transform: scaleY(0);
+          border-radius: 0;
+        }
+        &:hover{
+          color: #ff4495;
+          &::before{
+            transform: scaleY(1);
+            border: .1rem solid transparent;
+          }
+        }
+
+      }
+    }
+  }
+}

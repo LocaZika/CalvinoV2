@@ -1,0 +1,255 @@
+{
+  "header": {
+    "navbar": [
+      {"id": "1", "name": "home", "path": "/"},
+      {"id": "2", "name": "services", "path": "/services"},
+      {"id": "3", "name": "case study", "path": "/case-study"},
+      {"id": "4", "name": "blog", "path": "/blog"},
+      {"id": "5", "name": "about", "path": "/about"},
+      {"id": "6", "name": "contact", "path": "/contact"}
+    ],
+    "callUs": "(+84) 123 456 789",
+    "contact": {
+      "name": "Let's talk",
+      "path": "/contact"
+    }
+  },
+  "footer": {
+    "logo": "../../img/logo.png",
+    "description": "duis aute irure dolor inasfa reprehenderit in voluptate velit esse cillum",
+    "captions": [
+      {
+        "id": "cap1",
+        "title": "navigation",
+        "menu": [
+          {"id": "1", "name": "home", "path": ""},
+          {"id": "2", "name": "services", "path": "/services"},
+          {"id": "3", "name": "case study", "path": "/case-study"},
+          {"id": "4", "name": "blog", "path": "/blog"},
+          {"id": "5", "name": "contact", "path": "/contact"}
+        ]
+      },
+      {
+        "id": "cap2",
+        "title": "services",
+        "menu": [
+          {"id": "1", "name": "drone mapping", "path": "#"},
+          {"id": "2", "name": "real state", "path": "#"},
+          {"id": "3", "name": "commercial", "path": "#"},
+          {"id": "4", "name": "construction", "path": "#"}
+        ]
+      },
+      {
+        "id": "cap3",
+        "title": "support",
+        "menu": [
+          {"id": "1", "name": "drone mapping", "path": "#"},
+          {"id": "2", "name": "real state", "path": "#"},
+          {"id": "3", "name": "commercial", "path": "#"},
+          {"id": "4", "name": "construction", "path": "#"}
+        ]
+      },
+      {
+        "id": "cap4",
+        "title": "contact us",
+        "menu": [
+          {"id": "1", "name": "drone mapping", "path": "#"},
+          {"id": "2", "name": "contact@calvino.com", "path": "mailto:contact@calvino.com"},
+          {"id": "3", "name": "(+84) 123 456 789", "path": "tel:+84123456789"}
+        ]
+      }
+    ]
+  },
+  "services": {
+    "id": "1",
+    "title": "our services",
+    "subTitle": "provide awesome service with our tools",
+    "items": [
+      {
+        "id": "1",
+        "title": "discover, explore the product",
+        "img": "/imgs/icons/services1.svg",
+        "content": "effective strategies to help you reach customers.",
+        "path": "/services"
+      },
+      {
+        "id": "2",
+        "title": "discover, explore the product",
+        "img": "/imgs/icons/services2.svg",
+        "content": "effective strategies to help you reach customers.",
+        "path": "/services"
+      },
+      {
+        "id": "3",
+        "title": "discover, explore the product",
+        "img": "/imgs/icons/services3.svg",
+        "content": "effective strategies to help you reach customers.",
+        "path": "/services"
+      },
+      {
+        "id": "4",
+        "title": "discover, explore the product",
+        "img": "/imgs/icons/services3.svg",
+        "content": "effective strategies to help you reach customers.",
+        "path": "/services"
+      }
+    ]
+  },
+  "about": {
+    "id": "1",
+    "title": "about us",
+    "subTitle": "we create a steps to build a successful digital product",
+    "contents": [
+      {"id": "1", "text": "with over 50 years of combined experience, our mission is to design with your values and vision in mind. we’re out to create purposeful spaces that balance art and creativity with science and strategy."},
+      {"id": "2", "text": "we’re out to create purposeful spaces that balance art and creativity with science and strategy."}
+    ],
+    "link": {
+      "text": "explore more",
+      "path": "/about"
+    },
+    "img": "/imgs/about1.png"
+  },
+  "plans": {
+    "id": "1",
+    "title": "pricing plan",
+    "subTitle": "choose your best pricing plan"
+  },
+  "chooseUs": {
+    "id": "1",
+    "title": "why choose us",
+    "subTitle": "we are an SEO company that specializes in developing",
+    "completedProjects": 451,
+    "specialisedEmployees": 860,
+    "text": "with over 50 years of combined experience, our mission is to design with your values and vision in mind. We’re out to create purposeful spaces that balance art and creativity with science and strategy.",
+    "speaker": "- Shonda Leer, Chief of Staff at Franclin Technologies"
+  },
+  "caseStudy": {
+    "id": "1",
+    "title": "case study",
+    "subTitle": "some of our awsome stuffs",
+    "imgs": [
+      {"id": "1", "path": "/imgs/stuffs/stuffs1.jpg", "title": "marketing", "subTitle": "discover, explore the product"},
+      {"id": "1", "path": "/imgs/stuffs/stuffs2.jpg", "title": "marketing", "subTitle": "discover, explore the product"},
+      {"id": "1", "path": "/imgs/stuffs/stuffs3.jpg", "title": "marketing", "subTitle": "discover, explore the product"}
+    ]
+  },
+  "homePage": {
+    "hero": {
+      "id": "1",
+      "theme": "digital maketing expert",
+      "title": "we bring you new customers",
+      "text": "we build effective strategies to help you reach customers and prospects across the entire web.",
+      "link": "explore services"
+    }
+  },
+  "aboutPage":{
+    "title": "about us",
+    "subTitle": "we build effective strategies to help you reach customers and prospects across the entire web."
+  },
+  "servicesPage": {
+    "title": "services",
+    "subTitle": "We build effective strategies to help you reach customers and prospects across the entire web."
+  },
+  "caseStudyPage": {
+    "title": "case study",
+    "subTitle": "We build effective strategies to help you reach customers and prospects across the entire web."
+  },
+  "blogPage": {
+    "title": "blog",
+    "subTitle": "We build effective strategies to help you reach customers and prospects across the entire web."
+  },
+  "contactPage":{
+    "title": "contact us",
+    "subTitle": "We build effective strategies to help you reach customers and prospects across the entire web.",
+    "formTitle": "get in touch",
+    "info": {
+      "address": {
+        "home": "Buttonwood, California.",
+        "detail": "Rosemead, CA 91770"
+      },
+      "tel": {
+        "phoneNumber": "+0 123 456 789",
+        "schedule": "Mon to Fri, 9am to 6pm"
+      },
+      "email": {
+        "mail": "buinhupha@gmail.com",
+        "text": "Send us your query anytime"
+      }
+    }
+  },
+  "pricingPlans": [
+    {
+      "id": "1",
+      "price": 5.00,
+      "increaseTraffic": 25,
+      "socialMediaMkt": false,
+      "freeOptimization": 0,
+      "support": "24/7",
+      "period": "monthly",
+      "classification": "basic",
+      "path": "/imgs/icons/price1.svg"
+    },
+    {
+      "id": "2",
+      "price": 10.00,
+      "increaseTraffic": 50,
+      "socialMediaMkt": true,
+      "freeOptimization": 10,
+      "support": "24/7",
+      "period": "monthly",
+      "classification": "professional",
+      "path": "/imgs/icons/price2.svg"
+    },
+    {
+      "id": "3",
+      "price": 19.99,
+      "increaseTraffic": 75,
+      "socialMediaMkt": true,
+      "freeOptimization": 15,
+      "support": "24/7",
+      "period": "monthly",
+      "classification": "enterprise",
+      "path": "/imgs/icons/price3.svg"
+    },
+    {
+      "id": "4",
+      "price": 50.00,
+      "increaseTraffic": 30,
+      "socialMediaMkt": true,
+      "freeOptimization": 7,
+      "support": "24/7",
+      "period": "yearly",
+      "classification": "professional",
+      "path": "/imgs/icons/price1.svg"
+    },
+    {
+      "id": "5",
+      "price": 109.99,
+      "increaseTraffic": 60,
+      "socialMediaMkt": true,
+      "freeOptimization": 12,
+      "support": "24/7",
+      "period": "yearly",
+      "classification": "basic",
+      "path": "/imgs/icons/price2.svg"
+    },
+    {
+      "id": "6",
+      "price": 219.99,
+      "increaseTraffic": 80,
+      "socialMediaMkt": true,
+      "freeOptimization": 18,
+      "support": "24/7",
+      "period": "yearly",
+      "classification": "enterprise",
+      "path": "/imgs/icons/price3.svg"
+    }
+  ],
+  "brands": [
+    {"id": "1", "path": "/imgs/brands/brand1.png"},
+    {"id": "2", "path": "/imgs/brands/brand2.png"},
+    {"id": "3", "path": "/imgs/brands/brand3.png"},
+    {"id": "4", "path": "/imgs/brands/brand4.png"},
+    {"id": "5", "path": "/imgs/brands/brand5.png"}
+  ]
+}

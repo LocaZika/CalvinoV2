@@ -1,0 +1,17 @@
+export { default as Card } from './card/Card';
+export { default as ContactUs } from './contactUs/ContactUs';
+export { default as PlanCard} from './planCard/PlanCard';
+export { default as Counter } from './counter/Counter';
+export { default as Carousel } from './carousel/CustomCarousel';
+export { default as HeroPage } from './heroPage/heroPage';
+export { default as Hero } from './hero/Hero';
+export { default as Service } from './service/Service';
+export { default as AboutUs } from './aboutUs/AboutUs';
+export { default as CaseStudy } from './caseStudy/CaseStudy';
+export { default as ChooseUs } from './chooseUs/ChooseUs';
+export { default as Plan } from './plan/Plan';
+export { default as BackTopBtn } from './layout/app.backTop';
+export { default as Footer } from './layout/app.footer';
+export { default as Header } from './layout/app.header';
+export { default as HeaderMobile } from './layout/app.header.mobile';
+export { default as Brands } from './brands/Brands';

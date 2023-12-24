@@ -1,0 +1,8 @@
+@use '@styles/_extends';
+.brands-area {
+  border: .1rem solid #E8EEF3;
+  padding: 4.5rem 5rem;
+  box-shadow: 0 1.5rem 2.5rem rgba(68, 162, 255, 0.06);
+  @extend %pos-rel;
+  z-index: 5;
+}

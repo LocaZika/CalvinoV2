@@ -1,0 +1,160 @@
+@use '@styles/_extends';
+.navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 2rem;
+  z-index: 9;
+  width: 100%;
+  @media only screen and (min-width: 1200px) and (max-width: 1400px){
+    padding: 0 2rem;
+  }
+  @media (min-width: 1401px) and (max-width: 1600px){
+    padding: 0 3rem;
+  }
+  &__leftside{
+    &__logo{
+      @media only screen and (max-width: 1005px) {
+        padding: .8rem 0;
+      }
+    }
+    &__main-menu{
+      margin-left: 3rem;
+      @media only screen and (min-width: 1200px) and (max-width: 1400px){
+        margin-left: 2rem;
+      }
+      >ul{
+        display: flex;
+        align-items: center;
+        >li{
+          margin: 0 1.4rem;
+          a {
+            @extend %link_header;
+          }
+          &:hover{
+            a{
+              color: var(--primary-color);
+              &::after{
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__rightside{
+    a{
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+    &__callUs{
+      color: var(--white);
+      padding: 2rem 0;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-right: 2.6rem;
+      @media only screen and (max-width: 1199px){
+        display: none;
+      }
+      >span{
+        @extend %callUs_span;
+      }
+    }
+    &__contact{
+      @extend %contact_header;
+      &:hover{
+        -webkit-transition: all .4s ease-out 0s;
+        -moz-transition: all .4s ease-out 0s;
+        -ms-transition: all .4s ease-out 0s;
+        -o-transition: all .4s ease-out 0s;
+        transition: all .4s ease-out 0s;
+        background-position: top;
+        color: var(--white);
+        background: #7db9e8;
+        background: -moz-linear-gradient(top, #7db9e8 0%, #ff6d6d 0%, #ff4495 100%);
+        background: -webkit-linear-gradient(top, #7db9e8 0%, #ff6d6d 0%, #ff4495 100%);
+        background: linear-gradient(to bottom, #7db9e8 0%, #ff6d6d 0%, #ff4495 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db9e8', endColorstr='#ff4495', GradientType=0);
+      }
+    }
+  }
+  &__mobile{
+    a{
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+    &__menu{
+      li{
+        margin: 0 1.4rem;
+        a{
+          @extend %link_header;
+          padding: 1rem .7rem;
+        }
+      }
+    }
+    &__btn{
+      position: relative;
+      display: none;
+      vertical-align: middle;
+      float: right;
+      padding: 1rem 0.7rem;
+      line-height: 1.125em;
+      margin: 5px 5px 6px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      background-color: var(--white);
+    }
+    &__callUs{
+      display: block;
+      font-size: 1.6rem;
+      padding: 1rem 0.7rem;
+      margin-bottom: 3rem;
+      color: var(--black);
+      span{
+        @extend %callUs_span;
+        border-bottom-color: var(--black);
+        color: var(--black);
+      }
+    }
+    &__contact{
+      @extend %contact_header;
+    }
+  }
+  @media only screen and (max-width: 1005px){
+    padding: 1.5rem 2rem;
+    &__leftside{
+      &__main-menu{
+        display: none;
+      }
+    }
+    &__rightside__contact{
+      display: none;
+    }
+    &__mobile{
+      &__btn{
+        display: block;
+      }
+    }
+  }
+  &.sticky{
+    position: fixed;
+    padding: 0 2rem;
+    background-color: var(--white);
+    animation: stickyBar 0.5s linear normal forwards;
+    @keyframes stickyBar {
+      from{
+        top: -25%;
+      }
+      to{
+        top: 0;
+      }
+    }
+  }
+}

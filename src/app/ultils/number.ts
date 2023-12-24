@@ -1,0 +1,1 @@
+export const convertFloat = (num: number): string => num.toFixed(2);

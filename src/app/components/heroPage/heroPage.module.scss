@@ -1,0 +1,38 @@
+@use '@styles/_extends';
+.hero-area{
+  @extend %pos-rel;
+  margin-top: -.1rem;
+  &__bg{
+    background-image: url(../../../../public/imgs/h2_hero1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 54rem;
+    @extend %d-flex;
+    align-items: center;
+  }
+  &__caption{
+    @extend %pos-rel;
+    z-index: 2;
+    @media only screen and (min-width: 1200px) and (max-width: 1400px){
+      padding-top: 5rem;
+    }
+    h1{
+      color: #192839;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 11px;
+      @extend %text-cap;
+    }
+    p{
+      margin-bottom: 0;
+      color: #192839;
+      font-size: 20px;
+      line-height: 1.6;
+      &::first-letter{
+        @extend %text-upper;
+      }
+    }
+  }
+}

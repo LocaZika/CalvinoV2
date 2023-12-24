@@ -1,0 +1,73 @@
+@use '@styles/_extends';
+.plan-card{
+  padding: 3.5rem 4rem;
+  -webkit-transition: all .4s ease-out 0s;
+  -moz-transition: all .4s ease-out 0s;
+  -ms-transition: all .4s ease-out 0s;
+  -o-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  &:hover{
+    background: var(--white);
+    box-shadow: 0px 15px 30px rgba(255, 87, 0, 0.12);
+  }
+  &__top{
+    .card-icon{
+      color: #FF4495;
+      background: var(--white);
+      width: 7.8rem;
+      height: 7.8rem;
+      line-height: 7.8rem;
+      text-align: center;
+      border-radius: 5rem;
+      @extend %d-inline;
+      box-shadow: .0rem 1.5rem 2.5rem rgba(0, 4, 74, 0.04);
+      margin-bottom: 1.3rem;
+    }
+    span{
+      color: #FF4495;
+      margin-bottom: 1.9rem;
+      @extend %d-block;
+      @extend %text-cap;
+      border-radius: 2rem;
+      font-weight: 400;
+      font-size: 1.6rem;
+    }
+  }
+  &__mid{
+    margin-bottom: .8rem;
+    h4{
+      color: #192839;
+      margin-bottom: 2rem;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  }
+  &__bottom{
+    ul{
+      padding-left: 0;
+      li{
+        color: #192839;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        @extend %text-cap;
+        &:last-child{
+          margin-bottom: 3rem;
+        }
+      }
+      &.fix-height{
+        line-height: 2.2;
+      }
+    }
+    .card-btn{
+      color: var(--white);
+      padding: 1.1rem 2.3rem;
+      @extend %text-cap;
+      font-size: 1.8rem;
+      font-weight: 400;
+      border-radius: 4rem;
+      border: .1rem solid transparent;
+      @extend %primary-bg;
+    }
+  }
+}
