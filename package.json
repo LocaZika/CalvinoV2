@@ -10,7 +10,6 @@
     "server": "cd server && json-server db.json -w -p 2207"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
@@ -22,6 +21,7 @@
     "react-countup": "^6.5.0",
     "react-dom": "^18",
     "react-multi-carousel": "^2.8.4",
+    "resend": "^2.1.0",
     "sass": "^1.69.5",
     "swr": "^2.2.4"
   },

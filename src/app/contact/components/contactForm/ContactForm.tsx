@@ -2,59 +2,39 @@
 import { Col, Row } from 'react-bootstrap';
 import contactFormStyle from './contactForm.module.scss';
 import { nunito } from '@fonts';
-import React, { useReducer } from 'react';
+import React, { useState } from 'react';
+import { sendEmail } from '@actions';
 
-type TContactFormState = {
-  message: string;
+interface IEmailData {
   name: string;
   email: string;
   subject: string;
+  message: string;
 }
-type TContactFormAction = {
-  type: string;
-  payload: string;
-}
-const initialState: TContactFormState = {
-  message: "",
-  name: "",
-  email: "",
-  subject: "",
-};
-const reducer = (state: TContactFormState, action: TContactFormAction) => {
-  switch (action.type) {
-    case 'changeMessage':
-      return {...state, message: action.payload};
-    case 'changeName':
-      return {...state, name: action.payload};
-    case 'changeEmail':
-      return {...state, email: action.payload};
-    case 'changeSubject':
-      return {...state, subject: action.payload};
-    }
-  throw new Error();
+
+const sendMail = async (data: IEmailData) => {
+  const send = await fetch("/api/sendEmail", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  });
+  if (send.ok){
+    return await send.json();
+  }else{
+    return console.log("Send email failed");
+  }
 }
 
 export default function ContactForm() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    dispatch({type: 'changeMessage', payload: e.target.value});
-  }
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    dispatch({type: 'changeName', payload: e.target.value});
-  }
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    dispatch({type: 'changeEmail', payload: e.target.value});
-  }
-  const handleSubjectChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    dispatch({type: 'changeSubject', payload: e.target.value});
-  }
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = state;
-    
-  }
+  const [isSend, setIsSend] = useState<boolean>(false);
   return (
-    <form className={contactFormStyle["contact-form"]}>
+    <form
+      className={contactFormStyle["contact-form"]}
+      // onSubmit={handleSubmit}
+      action={sendEmail}
+    >
       <Row>
         <Col className='col-12'>
           <textarea
@@ -64,8 +44,6 @@ export default function ContactForm() {
             cols={30}
             rows={9}
             placeholder='enter message'
-            value={state.message}
-            onChange={handleMessageChange}
           ></textarea>
         </Col>
         <Col sm={6}>
@@ -75,8 +53,7 @@ export default function ContactForm() {
             id="contact-name"
             className={contactFormStyle['form-input']}
             placeholder='enter your name'
-            value={state.name}
-            onChange={handleNameChange}
+            
           />
         </Col>
         <Col sm={6}>
@@ -86,8 +63,6 @@ export default function ContactForm() {
             id='contact-email'
             className={contactFormStyle['form-input']}
             placeholder='enter your email address'
-            value={state.email}
-            onChange={handleEmailChange}
           />
         </Col>
         <Col className='col-12'>
@@ -97,8 +72,6 @@ export default function ContactForm() {
             id='contact-subject'
             className={contactFormStyle['form-input']}
             placeholder='enter subject'
-            value={state.subject}
-            onChange={handleSubjectChange}
           />
         </Col>
       </Row>
