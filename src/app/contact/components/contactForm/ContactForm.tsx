@@ -4,35 +4,14 @@ import contactFormStyle from './contactForm.module.scss';
 import { nunito } from '@fonts';
 import React, { useState } from 'react';
 import { sendEmail } from '@actions';
-
-interface IEmailData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-const sendMail = async (data: IEmailData) => {
-  const send = await fetch("/api/sendEmail", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data),
-  });
-  if (send.ok){
-    return await send.json();
-  }else{
-    return console.log("Send email failed");
-  }
-}
+import { useFormStatus } from 'react-dom';
 
 export default function ContactForm() {
   const [isSend, setIsSend] = useState<boolean>(false);
+  const { pending } = useFormStatus();
   return (
     <form
       className={contactFormStyle["contact-form"]}
-      // onSubmit={handleSubmit}
       action={sendEmail}
     >
       <Row>
@@ -53,7 +32,6 @@ export default function ContactForm() {
             id="contact-name"
             className={contactFormStyle['form-input']}
             placeholder='enter your name'
-            
           />
         </Col>
         <Col sm={6}>
@@ -76,7 +54,15 @@ export default function ContactForm() {
         </Col>
       </Row>
       <div className={`${contactFormStyle['form-btn']} mt-3`}>
-        <button type="submit" className={nunito.className}>send</button>
+        <button
+          type="submit"
+          className={`${nunito.className} ${pending ? 'is-pending' : null}`}
+          aria-disabled={pending}
+          disabled={pending}
+          onClick={() => {console.log('Pending: ', pending);}}
+        >
+          {pending === false ? 'send' : 'sending'}
+        </button>
       </div>
     </form>
   )

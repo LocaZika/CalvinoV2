@@ -39,7 +39,6 @@
       padding: 1.8rem 4.4rem;
       font-size: 1.4rem;
       font-weight: 400;
-      border: 0;
       border: .1rem solid #FF4495;
       letter-spacing: .1rem;
       text-align: center;
@@ -54,7 +53,20 @@
       &:hover{
         background: #FF4495;
         color: #fff;
-        border: .1rem solid #FF4495;
+      }
+      &.is-pending{
+        background: #FF4495;
+        color: #fff;
+        @extend %pos-rel;
+        &::before{
+          content: ' ';
+          @extend %pos-abs;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.8);
+        }
       }
     }
   }

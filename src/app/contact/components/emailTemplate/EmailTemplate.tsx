@@ -7,7 +7,7 @@ interface IEmailTemplate<T> {
   message: T;
 }
 
-export default function EmailTemplate({name, subject, email, message}: IEmailTemplate<string | null>) {
+export default function EmailTemplate({name, subject, email, message}: IEmailTemplate<string>) {
   return (
     <table width="100%" cellSpacing="0" cellPadding="0" bgcolor="#f5f6f7">
       <tbody>
