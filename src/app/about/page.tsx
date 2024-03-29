@@ -1,4 +1,4 @@
-import { HeroPage, AboutUs } from "@components";
+import { HeroPage, AboutUs, ChooseUs, ContactUs } from "@components";
 import { getData } from "@actions";
 
 export default async function AboutPage() {
@@ -6,11 +6,13 @@ export default async function AboutPage() {
   if (!aboutPage){
     return null;
   }
-  const { title, subTitle } = aboutPage;
+  const { title, subTitle, about, chooseUs }: TAboutPage = aboutPage;
   return (
     <section className='about'>
       <HeroPage title={title} subTitle={subTitle}/>
-      <AboutUs />
+      <AboutUs data={about} />
+      <ChooseUs data={chooseUs} />
+      <ContactUs />
     </section>
   )
 }

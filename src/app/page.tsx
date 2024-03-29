@@ -8,19 +8,19 @@ const metadata: Metadata = {
 }
 
 export default async function Home() {
-  const {hero} = await getData('/homePage');
+  const {hero, about, service, plan, caseStudy, chooseUs}= await getData('/homePage');
   
-  if (undefined == hero){
-    <div>loading</div>
+  if (undefined == hero || undefined == service || undefined == plan || undefined == caseStudy){
+    <div>loading...</div>
   }
   return (
     <div className="home">
       <Hero data={hero}/>
-      <Service />
-      <AboutUs />
-      <Plan />
-      <ChooseUs />
-      <CaseStudy />
+      <Service data={service} />
+      <AboutUs data={about} />
+      <Plan data={plan} />
+      <ChooseUs data={chooseUs} />
+      <CaseStudy data={caseStudy} />
       <ContactUs />
     </div>
   )

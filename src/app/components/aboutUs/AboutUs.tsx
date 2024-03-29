@@ -1,16 +1,15 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import aboutUsStyle from './aboutUs.module.scss';
-import Image from 'next/image';
 import Link from 'next/link';
 import { nunito } from '@app/fonts';
 
 interface IContentAbout{
-  id: string,
+  _id: string,
   text: string,
 }
 
 interface IAbout{
-  id: string,
+  _id: string,
   title: string,
   subTitle: string,
   contents: IContentAbout[],
@@ -23,12 +22,7 @@ interface IAbout{
 }
 
 
-export default async function AboutUs() {
-  const getData = await fetch(`${process.env.NEXT_PUBLIC_HOST}/about`);
-  const data = await getData.json();
-  if(!data){
-    return null;
-  }
+export default function AboutUs({data}: {data: IAbout}) {
   const {title, subTitle, contents, link, img}: IAbout = data;
   return (
     <section className={aboutUsStyle['about-area']}>
@@ -45,10 +39,10 @@ export default async function AboutUs() {
                 <span>{title}</span>
                 <h2 className={nunito.className}>{subTitle}</h2>
                 {
-                  contents.map(({id, text}, index) => (
+                  contents.map(({_id, text}, index) => (
                     contents.length != index + 1 ?
-                    <p key={id}>{text}</p> :
-                    <p key={id} className='mb-40 pt-10'>{text}</p>
+                    <p key={_id}>{text}</p> :
+                    <p key={_id} className='mb-40 pt-10'>{text}</p>
                   ))
                 }
               </div>

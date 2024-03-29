@@ -2,9 +2,14 @@
 import Image from 'next/image';
 import cardStyle from './card.module.scss';
 import Link from 'next/link';
-import { ICardData } from '@/datatypes/types';
 import { nunito } from '@app/fonts';
 
+interface ICardData {
+  title: string;
+  img: string;
+  content: string;
+  path: string;
+}
 interface ICard{
   data: ICardData,
 }

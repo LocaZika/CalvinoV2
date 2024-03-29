@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "experimental": "next experimental-compile",
     "start": "next start",
     "lint": "next lint",
     "server": "cd server && json-server db.json -w -p 2207"
@@ -15,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "bootstrap": "^5.3.2",
+    "dotenv": "^16.4.5",
     "next": "14.0.4",
     "react": "^18",
     "react-bootstrap": "^2.9.1",
@@ -23,6 +25,7 @@
     "react-multi-carousel": "^2.8.4",
     "resend": "^2.1.0",
     "sass": "^1.69.5",
+    "sharp": "^0.33.3",
     "swr": "^2.2.4"
   },
   "devDependencies": {

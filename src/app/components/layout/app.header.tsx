@@ -16,7 +16,8 @@ export default function Header() {
     return (
       <div>loading...</div>
     )
-  }
+  }  
+  const { navbar, contact, callUs }: IHeader = data;
   return (
     <header>
       <Navbar id='navbar' className={
@@ -39,8 +40,8 @@ export default function Header() {
               <Nav className={headerStyle['navbar__leftside__main-menu']}>
                 <ul>
                   {
-                    data?.navbar.map((item)  => (
-                      <li key={item.id}>
+                    navbar.map((item)  => (
+                      <li key={item._id}>
                         <Link href={item.path}>{item.name}</Link>
                       </li>
                     ))
@@ -49,17 +50,17 @@ export default function Header() {
               </Nav>
             </div>
             <div className={headerStyle['navbar__rightside']}>
-              <Link href={`tel:${convertTelNumber(data?.callUs)}`} className={headerStyle["navbar__rightside__callUs"]}>
-                call us: <span>{data?.callUs}</span>
+              <Link href={`tel:${convertTelNumber(callUs)}`} className={headerStyle["navbar__rightside__callUs"]}>
+                call us: <span>{callUs}</span>
               </Link>
-              <Link href={data?.contact.path} className={headerStyle["navbar__rightside__contact"]}>
-                {data?.contact.name}
+              <Link href={contact.path} className={headerStyle["navbar__rightside__contact"]}>
+                {contact.name}
               </Link>
             </div>
             <HeaderMobile
-              navbar={data?.navbar}
-              callUs={data?.callUs}
-              contact={data?.contact}
+              navbar={navbar}
+              callUs={callUs}
+              contact={contact}
               logo={logo}
               style={headerStyle}
             />

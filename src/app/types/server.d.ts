@@ -1,18 +1,17 @@
 /** LAYOUT */
 // Header
 type TNavbarItem = {
-  id: string,
+  _id: string,
   name: string,
   path: string,
 }
-type TNavbar = TNavbarItem[]
 type TCallUs = string
 type TContact = {
   name: string,
   path: string,
 }
 interface IHeader {
-  navbar: TNavbar,
+  navbar: TNavbarItem[],
   callUs: TCallUs,
   contact: TContact,
 }
@@ -20,12 +19,12 @@ interface IHeader {
 type TLogo = string
 type TDescriptionFooter = string
 type TMenuCaption = {
-  id: string,
+  _id: string,
   name: string,
   path: string,
 }
 type TCaptionItem = {
-  id: string,
+  _id: string,
   title: string,
   menu: TMenuCaption[],
 }
@@ -37,7 +36,7 @@ type TFooter = {
 /** DATA COMPONENTS FROM SERVER */
 // Hero
 type THero = {
-  id: string,
+  _id: string,
   theme: string,
   title: string,
   text: string,
@@ -45,21 +44,21 @@ type THero = {
 }
 // Services
 type TServiceItem = {
-  id: string,
+  _id: string,
   title: string,
   img: string,
   content: string,
   path: string,
 }
 type TServices = {
-  id: string,
+  _id: string,
   title: string,
   subTitle: string,
   items: TServiceItem[],
 }
 // About
 type TAboutContentItem = {
-  id: string,
+  _id: string,
   text: string,
 }
 type TAboutLinkItem = {
@@ -67,7 +66,7 @@ type TAboutLinkItem = {
   path: string,
 }
 type TAbout = {
-  id: string,
+  _id: string,
   title: string,
   subTitle: string,
   contents: TAboutContentItem[],
@@ -76,29 +75,31 @@ type TAbout = {
 }
 // Plans
 type TPlan = {
-  id: string,
+  _id: string,
   title: string,
   subTitle: string,
+  pricingPlans: TPricingPlanItem[],
 }
 // Choose us
 type TChooseUs = {
-  id: string,
+  _id: string,
   title: string,
   subTitle: string,
   completedProjects: number,
   specialisedEmployees: number,
   text: string,
   speaker: string,
+  brands: TBrandsItem[],
 }
 // Case study
 type TCaseStudyImageItem = {
-  id: string,
+  _id: string,
   path: string,
   title: string,
   subTitle: string,
 }
 type TCaseStudy = {
-  id: string,
+  _id: string,
   title: string,
   subTitle: string,
   imgs: TCaseStudyImageItem[],
@@ -108,16 +109,22 @@ type TCaseStudy = {
 type TAboutPage = {
   title: string,
   subTitle: string,
+  about: TAbout,
+  chooseUs: TChooseUs,
 }
 // Services page
 type TServicesPage = {
   title: string,
   subTitle: string,
+  service: TServices,
+  plan: TPlan,
+
 }
 // Case study page
 type TCaseStudyPage = {
   title: string,
   subTitle: string,
+  caseStudy: TCaseStudy,
 }
 // Blog page
 type TBlogPage = {
@@ -148,7 +155,7 @@ type TContactPage = {
 /** DATA LISTS FROM SERVER */
 // Pricing plans
 type TPricingPlanItem = {
-  id: string,
+  _id: string,
   price: number,
   increaseTraffic: number,
   socialMediaMkt: boolean,
@@ -158,10 +165,8 @@ type TPricingPlanItem = {
   classification: 'basic' | 'professional' | 'enterprise',
   path: string,
 }
-type TPricingPlans = TPricingPlanItem[];
 // Brands
 type TBrandItem = {
-  id: string,
+  _id: string,
   path: string,
 }
-type TBrands = TBrandItem[]

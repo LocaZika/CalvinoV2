@@ -6,11 +6,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import { nunito } from "@fonts";
 
 export default async function contactPage() {
-  const contactPage: TContactPage = await getData('/contactPage');
+  const contactPage = await getData('/contactPage');
   if (!contactPage){
     return null;
   }
-  const { title, subTitle, formTitle, info } = contactPage;
+  const { title, subTitle, formTitle, info }: TContactPage = contactPage;
   return (
     <div className='contact'>
       <HeroPage title={title} subTitle={subTitle}/>

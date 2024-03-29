@@ -1,5 +1,4 @@
 'use client'
-import { useApi } from '@hooks';
 import planStyle from './plan.module.scss';
 import { useState } from 'react';
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap';
@@ -7,9 +6,8 @@ import { nunito } from '@app/fonts';
 import { PlanCard } from '@components';
 
 
-export default function Plan() {
-  const {data: componentData, isLoading: isLoadingComponent}: {data: TPlan, isLoading: boolean} = useApi('/plans');
-  const {data, isLoading} = useApi('/pricingPLans');
+export default function Plan({data}: {data: TPlan}) {
+  const {title, subTitle, pricingPlans}: TPlan = data;
   const [activeKey, setActiveKey] = useState<any>('monthly');
   const handleActiveKey = (key: any) => setActiveKey(key);
   const activeStyle = {
@@ -17,23 +15,15 @@ export default function Plan() {
     background: '#192839',
     border: 0,
   }
-  if( isLoadingComponent ){
-    return <div>Loading component</div>
-  }
-  if( isLoading ){
-    return (
-      <div>loading...</div>
-    )
-  }
   return (
-    <section className={`${planStyle['plans-area']} fix section-padding`}>
+    <section className={`${planStyle['plans-area']} fix`}>
       <Tab.Container activeKey={activeKey} onSelect={(key: any) => handleActiveKey(key)}>
         <Container className='p-bg pt-70'>
           <Row className='justify-content-center'>
             <Col md={10} lg={7} xl={8}>
               <div className="section-title text-center mb-15">
-                <span>{componentData.title}</span>
-                <h2 className={nunito.className}>{componentData.subTitle}</h2>
+                <span>{title}</span>
+                <h2 className={nunito.className}>{subTitle}</h2>
               </div>
             </Col>
           </Row>
@@ -63,10 +53,10 @@ export default function Plan() {
             <Tab.Pane eventKey={'monthly'}>
               <Row>
                 {
-                  data?.map((item: TPricingPlanItem) => {
+                  pricingPlans?.map((item: TPricingPlanItem) => {
                     if (item.period === 'monthly') {
                       return (
-                        <Col sm={10} md={6} lg={4} xl={4} key={item.id}>
+                        <Col sm={10} md={6} lg={4} xl={4} key={item._id}>
                           <PlanCard data={item} />
                         </Col>
                       )
@@ -79,10 +69,10 @@ export default function Plan() {
             <Tab.Pane eventKey={'yearly'}>
               <Row>
                 {
-                  data?.map((item: TPricingPlanItem) => {
+                  pricingPlans?.map((item: TPricingPlanItem) => {
                     if (item.period === 'yearly') {
                       return (
-                        <Col sm={10} md={6} lg={4} xl={4} key={item.id}>
+                        <Col sm={10} md={6} lg={4} xl={4} key={item._id}>
                           <PlanCard data={item} />
                         </Col>
                       )

@@ -5,8 +5,6 @@ import '@styles/themify-icons/themify-icons.css';
 import { jost } from './fonts';
 import { Header, Footer, BackTopBtn } from '@components';
 
-
-
 export const metadata: Metadata = {
   title: 'Calvino',
   description: 'create by zika',

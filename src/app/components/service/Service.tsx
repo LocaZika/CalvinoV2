@@ -6,18 +6,9 @@ import Image from 'next/image';
 import shape1 from '@public/imgs/shapes/shape-1.png';
 import shape2 from '@public/imgs/shapes/shape-2.png';
 
-export default async function Service() {
-  const getServices = await fetch(`${process.env.NEXT_PUBLIC_HOST}/services`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-  const services = await getServices.json();
-  if(!services){
-    return null;
-  }
-  const {title, subTitle, items}: TServices = services;
+
+export default function Service({data}: {data: TServices}) {
+  const { title, subTitle, items }: TServices = data;
   return (
     <section className={`${serviceStyle['service']} position-relative`}>
       <Container>
@@ -32,7 +23,7 @@ export default async function Service() {
         <Row>
           {
             items?.map((item) => (
-              <Col key={item.id} sm={6} md={6} lg={4} xl={3}>
+              <Col key={item._id} sm={6} md={6} lg={4} xl={3}>
                 <Card data={item} />
               </Col>
             ))

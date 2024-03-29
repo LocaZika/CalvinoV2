@@ -4,18 +4,8 @@ import { Carousel } from '@components';
 import Image from 'next/image';
 import { nunito } from '@app/fonts';
 
-export default async function CaseStudy() {
-  const getCaseStudy = await fetch(`${process.env.NEXT_PUBLIC_HOST}/caseStudy`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  const caseStudy: TCaseStudy = await getCaseStudy.json();
-  if(!caseStudy){
-    return null;
-  }
-  const {title, subTitle, imgs} = caseStudy;
+export default function CaseStudy({data}: {data: TCaseStudy}) {
+  const {title, subTitle, imgs}: TCaseStudy = data;
   return (
     <section className={`${caseStyle['case-study-area']} pt-100 fix`}>
       <Container>
@@ -35,8 +25,8 @@ export default async function CaseStudy() {
             ssr={true}
           >
             {
-              imgs.map(({id, path, subTitle, title}) => (
-                <div key={id} className={caseStyle['case-item']}>
+              imgs.map(({_id, path, subTitle, title}) => (
+                <div key={_id} className={caseStyle['case-item']}>
                   <Image src={path} alt={"case img"} width={348} height={295} />
                   <div className={caseStyle['guest-conent']}>
                     <p>{title}</p>

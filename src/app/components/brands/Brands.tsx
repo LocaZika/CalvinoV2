@@ -3,14 +3,7 @@ import { Carousel } from "@components";
 import Image from "next/image";
 import brandStyle from './brand.module.scss';
 
-export default async function Brands() {
-  const getBrands = await fetch(`${process.env.NEXT_PUBLIC_HOST}/brands`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  });
-  const brands: TBrands = await getBrands.json();
+export default function Brands({data: brands}: {data: TBrandItem[]}){
   return (
     <Container>
       <Row>
@@ -22,8 +15,8 @@ export default async function Brands() {
               <div className={brandStyle['brands-area']}>
                 <Carousel ssr={true}>
                   {
-                    brands.map(({id, path}) => (
-                      <Image key={id} src={path} alt='brand' width={147} height={53} />
+                    brands.map(({_id, path}) => (
+                      <Image key={_id} src={path} alt='brand' width={147} height={53} />
                     ))
                   }
                 </Carousel>

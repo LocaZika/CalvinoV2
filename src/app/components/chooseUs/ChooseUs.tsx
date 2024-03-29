@@ -2,21 +2,10 @@ import { Col, Container, Row } from 'react-bootstrap';
 import chooseUsStyle from './chooseUs.module.scss';
 import { nunito } from '@app/fonts';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Brands, Carousel, Counter } from '@components';
+import { Brands, Counter } from '@components';
 
-export default async function ChooseUs() {
-  const getChooseUs = await fetch(`${process.env.NEXT_PUBLIC_HOST}/chooseUs`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  const chooseUs: TChooseUs = await getChooseUs.json();
-  const {title, subTitle, specialisedEmployees, completedProjects, text, speaker} = chooseUs;
-  if( undefined === chooseUs ){
-    return null;
-  }
+export default function ChooseUs({data}: {data: TChooseUs}) {
+  const {title, subTitle, specialisedEmployees, completedProjects, text, speaker, brands}: TChooseUs = data;
   return (
     <section className={chooseUsStyle['choose-us-area']}>
       <Container>
@@ -84,7 +73,7 @@ export default async function ChooseUs() {
           </Col>
         </Row>
       </Container>
-      <Brands />
+      <Brands data={brands} />
     </section>
   )
 }

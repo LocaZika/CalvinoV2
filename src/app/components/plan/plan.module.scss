@@ -1,5 +1,6 @@
 @use '@styles/_extends';
 .plans-area{
+  padding-top: 12rem;
   nav{
     @extend %d-flex;
     justify-content: center;

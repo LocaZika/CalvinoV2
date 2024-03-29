@@ -33,7 +33,7 @@ export default function HeaderMobile({navbar, callUs, contact, logo, style}: IHe
             <ul className={style['navbar__mobile__menu']}>
               {
                 navbar.map((item) => (
-                  <li key={item.id}>
+                  <li key={item._id}>
                     <Link href={item.path}>{item.name}</Link>
                   </li>
                 ))

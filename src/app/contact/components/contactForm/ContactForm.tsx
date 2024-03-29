@@ -7,7 +7,6 @@ import { sendEmail } from '@actions';
 import { useFormStatus } from 'react-dom';
 
 export default function ContactForm() {
-  const [isSend, setIsSend] = useState<boolean>(false);
   const { pending } = useFormStatus();
   return (
     <form
@@ -59,7 +58,6 @@ export default function ContactForm() {
           className={`${nunito.className} ${pending ? 'is-pending' : null}`}
           aria-disabled={pending}
           disabled={pending}
-          onClick={() => {console.log('Pending: ', pending);}}
         >
           {pending === false ? 'send' : 'sending'}
         </button>

@@ -2,14 +2,12 @@ import Link from 'next/link';
 import planCardStyle from './planCard.module.scss';
 import Image from 'next/image';
 import { nunito } from '@app/fonts';
-import { IPlanCard } from '@/datatypes/types';
 import { convertFloat } from '@ultils/number';
 
-interface IProps {
-  data: IPlanCard;
-}
 
-export default function PlanCard({data: {price, increaseTraffic, socialMediaMkt, freeOptimization, support, classification, path}}: IProps) {
+// props = {data} -- {data}: IProps
+export default function PlanCard({data}: {data: TPricingPlanItem}) {
+  const {price, increaseTraffic, socialMediaMkt, freeOptimization, support, classification, path} = data;
   return (
     <div className={`${planCardStyle['plan-card']} text-center mb-30`}>
       <div className={`${planCardStyle["plan-card__top"]}`}>

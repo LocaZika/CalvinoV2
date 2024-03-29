@@ -66,16 +66,16 @@ export default async function Footer() {
                 </div>
               </Col>
               {
-                data?.captions.map(({id, title, menu}: TCaptionItem, index: number) => {
+                data?.captions.map(({_id, title, menu}: TCaptionItem, index: number) => {
                   if (index + 1 != data?.captions.length){
                     return (
-                      <Col sm={6} md={4} lg={2} xl={2} key={id}>
+                      <Col sm={6} md={4} lg={2} xl={2} key={_id}>
                         <div className={footerStyle['footer-wrapper__footer-area__caption']}>
                           <h4 className={nunito.className}>{title}</h4>
                           <ul>
                             {
-                              menu.map(({id, name, path}) => (
-                                  <li key={id}>
+                              menu.map(({_id, name, path}) => (
+                                  <li key={_id}>
                                     <Link href={path}>{name}</Link>
                                   </li>
                                 )
@@ -87,21 +87,21 @@ export default async function Footer() {
                     )
                   }else {
                     return (
-                      <Col sm={8} md={6} lg={4} xl={3} xxl={2} key={id}>
+                      <Col sm={8} md={6} lg={4} xl={3} xxl={2} key={_id}>
                         <div className={`${footerStyle['footer-wrapper__footer-area__caption']} ${footerStyle['contact']}`}>
                           <h4 className={nunito.className}>{title}</h4>
                           <ul>
                             {
-                              menu.map(({id, name, path}, index: number) => {
+                              menu.map(({_id, name, path}, index: number) => {
                                 if (index == menu.length - 1 || index == menu.length - 2) {
                                   return (
-                                    <li key={id} className={nunito.className}>
+                                    <li key={_id} className={nunito.className}>
                                       <Link href={path}>{name}</Link>
                                     </li>
                                   )
                                 }
                                 return (
-                                  <li key={id}>
+                                  <li key={_id}>
                                     <Link href={path}>{name}</Link>
                                   </li>
                                 )
