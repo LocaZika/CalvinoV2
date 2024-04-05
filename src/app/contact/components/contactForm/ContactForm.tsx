@@ -2,7 +2,6 @@
 import { Col, Row } from 'react-bootstrap';
 import contactFormStyle from './contactForm.module.scss';
 import { nunito } from '@fonts';
-import React, { useState } from 'react';
 import { sendEmail } from '@actions';
 import { useFormStatus } from 'react-dom';
 

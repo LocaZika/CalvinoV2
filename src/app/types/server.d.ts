@@ -126,11 +126,6 @@ type TCaseStudyPage = {
   subTitle: string,
   caseStudy: TCaseStudy,
 }
-// Blog page
-type TBlogPage = {
-  title: string,
-  subTitle: string,
-}
 // Contact page
 type TContactInfo = {
   address: {

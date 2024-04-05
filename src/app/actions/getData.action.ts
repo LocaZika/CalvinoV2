@@ -18,7 +18,6 @@ export default async function getData(api: string) {
   if (!res.ok) {
     throw new Error('Error fetching from server!');
   }
-  console.log(process.env.NEXT_PUBLIC_HOST);
   
   return res.json();
 }
